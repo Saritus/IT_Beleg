@@ -33,7 +33,7 @@
 <body>
 
 	<!-- Navigationbar -->
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-inverse navbar-static-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"

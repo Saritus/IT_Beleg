@@ -4,8 +4,7 @@ if (isset ( $_POST ['Post-Title'] ) && isset ( $_POST ['Post'] )) {
 	echo $var;
 	$post = $_POST ['Post'];
 	echo $post;
-
 }
 
-echo $_GET['variable'];
+echo $_GET ['variable'];
 ?>
