@@ -1,3 +1,36 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/html">
+<head>
+
+
+<title>SariBlog</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="language" content="Deutsch, DE">
+<meta name="Autor" content="Sebastian Mischke">
+<meta name="description" content="Blog-Developing">
+<meta name="keywords" content="HTML, CSS, Javascript">
+<link href="images/favicon.png" type="image/x-icon" rel="shortcut icon">
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+<script src="js/jquery-1.12.3.js" type="text/javascript"></script>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/monthly.css" rel="stylesheet">
+<script src="js/monthly.js"></script>
+<script>
+            $(document).ready(function(){
+                $('#mycalendar').monthly({
+                    mode: 'event',
+                    xmlUrl: 'files/event.xml'
+                });
+            });
+        </script>
+<script>
+            $(function(){
+                $("#footer").load("footer.html");
+            });
+        </script>
+</head>
+
 <?php
 $upload_folder = 'upload/'; // Das Upload-Verzeichnis
 $filename = pathinfo ( $_FILES ['datei'] ['name'], PATHINFO_FILENAME );
@@ -15,7 +48,7 @@ if (! in_array ( $extension, $allowed_extensions )) {
 }
 
 // Überprüfung der Dateigröße
-$max_size = 2 * 1024 * 1024; // 500 KB
+$max_size = 2 * 1024 * 1024; // 2 MB
 if ($_FILES ['datei'] ['size'] > $max_size) {
 	die ( "Bitte keine Dateien größer 2MB hochladen" );
 }
@@ -28,7 +61,7 @@ $allowed_types = array (
 );
 $detected_type = exif_imagetype ( $_FILES ['datei'] ['tmp_name'] );
 if (! in_array ( $detected_type, $allowed_types )) {
-	die ( "Nur der Upload von Bilddateien ist gestattet" );
+	die ( '' );
 }
 
 // Pfad zum Upload
@@ -45,6 +78,22 @@ if (file_exists ( $new_path )) { // Falls Datei existiert, hänge eine Zahl an de
 
 // Alles okay, verschiebe Datei an neuen Pfad
 move_uploaded_file ( $_FILES ['datei'] ['tmp_name'], $new_path );
-echo 'Bild erfolgreich hochgeladen: <a href="' . $new_path . '">' . $new_path . '</a>';
-header('Location: index.php');
 ?>
+
+<!-- 
+$(document).ready(function(){
+    $("button").click(function(){
+        $.post("demo_test_post.asp",
+        {
+          name: "Donald Duck",
+          city: "Duckburg"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});
+ -->
+
+
+</html>

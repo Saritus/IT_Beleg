@@ -65,6 +65,15 @@
 		<!--/.container-fluid -->
 	</nav>
 
+	<?php
+	if (isset ( $_POST ['Alert-Type'] ) && isset ( $_POST ['Alert'] )) {
+		$alert = $_POST ['Alert'];
+		echo '<div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> Image was successfully uploaded.
+        </div>';
+	}
+	?>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">

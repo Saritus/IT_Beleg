@@ -91,7 +91,7 @@
 				</script>
 			</div>
 			<div class="col-lg-4">
-				<h2>Heading</h2>
+				<h2>MarkDown Editor</h2>
 				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
 					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
 					fermentum massa justo sit amet risus. Etiam porta sem malesuada
