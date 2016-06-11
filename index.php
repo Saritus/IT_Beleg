@@ -43,7 +43,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">SariBlog</a>
+				<a class="navbar-brand" href="index.php">SariBlog</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -65,20 +65,37 @@
 		<!--/.container-fluid -->
 	</nav>
 
-	<!-- Kalender -->
-	<div class="monthly" id="mycalendar"></div>
-
-	<form action="functions.php" method="post">
-		<p>
-			<input type="text" name="Post-Title" placeholder="Post-Title" />
-		</p>
-		<p id="textarea">
-			<textarea id="MyID" type="text" name="Post" /></textarea>
-		</p>
-		<p>
-			<input type="submit" value="Posten" />
-		</p>
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<h2>Safari bug warning!</h2>
+				<p class="text-danger">As of v8.0, Safari exhibits a bug in which
+					resizing your browser horizontally causes rendering errors in the
+					justified nav that are cleared upon refreshing.</p>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+					fermentum massa justo sit amet risus. Etiam porta sem malesuada
+					magna mollis euismod. Donec sed odio dui.</p>
+				<p>
+					<a class="btn btn-primary" href="#" role="button">View details
+						&raquo;</a>
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<h2>Heading</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+					fermentum massa justo sit amet risus. Etiam porta sem malesuada
+					magna mollis euismod. Donec sed odio dui.</p>
+				<p>
+					<a class="btn btn-primary" href="#" role="button">View details
+						&raquo;</a>
+				</p>
+				<!-- Kalender -->
+				<div class="monthly" id="mycalendar"></div>
+			</div>
+		</div>
+	</div>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>

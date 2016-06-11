@@ -43,7 +43,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">SariBlog</a>
+				<a class="navbar-brand" href="index.php">SariBlog</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -65,20 +65,18 @@
 		<!--/.container-fluid -->
 	</nav>
 
-	<!-- Kalender -->
-	<div class="monthly" id="mycalendar"></div>
-
-	<form action="functions.php" method="post">
-		<p>
-			<input type="text" name="Post-Title" placeholder="Post-Title" />
-		</p>
-		<p id="textarea">
-			<textarea id="MyID" type="text" name="Post" /></textarea>
-		</p>
-		<p>
-			<input type="submit" value="Posten" />
-		</p>
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<form action="upload.php" method="post"
+					enctype="multipart/form-data">
+					<input type="file" name="datei"><br> <input type="submit"
+						value="Hochladen">
+				</form>
+			</div>
+			<div class="col-lg-6"></div>
+		</div>
+	</div>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
