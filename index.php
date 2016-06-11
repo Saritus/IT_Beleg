@@ -3,7 +3,7 @@
 <head>
 
 
-<title>IT-Beleg Webseite für ein Blog</title>
+<title>SariBlog</title>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="language" content="Deutsch, DE">
@@ -47,22 +47,17 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
+					<li class="active"><a href="index.php">Home</a></li>
+					<li><a href="posts.php">Posts</a></li>
+					<li><a href="pictures.php">Pictures</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Admin <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="newPost.php">New Post</a></li>
 							<li><a href="editPost.php">Edit Post</a></li>
-							<li><a href="uploadPicture">Upload Picture</a></li>
+							<li><a href="uploadPicture.php">Upload Picture</a></li>
 						</ul></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-					<li><a href="../navbar-static-top/">Static top</a></li>
-					<li><a href="../navbar-fixed-top/">Fixed top</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -72,12 +67,6 @@
 
 	<!-- Kalender -->
 	<div class="monthly" id="mycalendar"></div>
-
-	<div class="container">
-		<script type="text/javascript">
-			document.write('test');
-		</script>
-	</div>
 
 	<form action="functions.php" method="post">
 		<p>
@@ -90,10 +79,6 @@
 			<input type="submit" value="Posten" />
 		</p>
 	</form>
-	
-	<div class="container">
-		<a href="functions.php?variable=1">Link</a>
-	</div>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>

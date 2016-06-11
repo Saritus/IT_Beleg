@@ -54,9 +54,9 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Admin <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="newPost.php">New Post</a></li>
+							<li><a href="newPost.php">New Post</a></li>
 							<li><a href="editPost.php">Edit Post</a></li>
-							<li><a href="uploadPicture.php">Upload Picture</a></li>
+							<li class="active"><a href="uploadPicture.php">Upload Picture</a></li>
 						</ul></li>
 				</ul>
 			</div>
