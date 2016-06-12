@@ -16,6 +16,11 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <link href="css/monthly.css" rel="stylesheet">
 <script src="js/monthly.js"></script>
+<script>
+            $(function(){
+                $("#footer").load("footer.html");
+            });
+        </script>
 </head>
 <body>
 

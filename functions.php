@@ -42,12 +42,4 @@ if (isset ( $_POST ['Post-Title'] ) && isset ( $_POST ['Post'] )) {
 		header ( 'Location: index.php' );
 	}
 }
-
-if (isset ( $_GET ['Delete-Post'] )) {
-	$doc = simplexml_load_file ( 'xml/posts.xml' );
-	unset ( $doc->Post [intval ( $_GET ['Delete-Post'] )] );
-	$doc->asXML ( "xml/posts.xml" );
-	header ( 'Location: editPost.php' );
-}
-
 ?>
