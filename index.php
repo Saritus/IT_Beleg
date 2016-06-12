@@ -93,6 +93,16 @@
 				</p>
 				<!-- Kalender -->
 				<div class="monthly" id="mycalendar"></div>
+				
+				<?php
+				if (file_exists ( 'xml/posts.xml' )) {
+					$doc = simplexml_load_file ( 'xml/posts.xml' );
+					foreach ( $doc->children () as $post ) {
+						echo '<p><a href="#">'.$post->Title.'</a></p>';
+					}
+				}
+				?>
+				
 			</div>
 		</div>
 	</div>
