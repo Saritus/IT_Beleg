@@ -80,8 +80,10 @@
 					<p>' . $images [$rowcount * $x + $y] . '</p> <img class="img-thumbnail" alt="250x250"
 					src="upload/' . $images [$rowcount * $x + $y] . '" data-holder-rendered="true"
 					style="width: 250px; height: 250px;">
+				<!-- <a class="btn btn-primary" href="#" role="button">Delete</a> -->
 				</a>
-			</div>';
+				
+				</div>';
 		endfor
 		;
 		echo '</div>';

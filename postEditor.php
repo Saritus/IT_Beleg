@@ -57,8 +57,8 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Admin <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="newPost.php">New Post</a></li>
-							<li><a href="editPost.php">Edit Post</a></li>
+							<li><a href="newPost.php">New Post</a></li>
+							<li class="active"><a href="editPost.php">Edit Post</a></li>
 							<li><a href="uploadPicture.php">Upload Picture</a></li>
 						</ul></li>
 				</ul>
@@ -68,21 +68,23 @@
 		<!--/.container-fluid -->
 	</nav>
 
-
-
-
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">
 				<form action="functions.php" method="post">
 					<p>
-						<input type="text" name="Post-Title" placeholder="Post-Title" />
+						<input type="text" name="Post-Title" />
 					</p>
 					<p id="textarea">
-						<textarea id="MDE" name="Post" /></textarea>
+						<textarea id="MDE" name="Post" /><?php
+						if (file_exists ( 'xml/posts.xml' )) {
+							$doc = simplexml_load_file ( 'xml/posts.xml' );
+							echo $doc->Post [intval ( $_GET ['index'] )]->Text;
+						}
+						?></textarea>
 					</p>
 					<p>
-						<input type="submit" value="Posten" />
+						<input type="submit" value="Apply" />
 					</p>
 				</form>
 
@@ -91,17 +93,70 @@
 				</script>
 			</div>
 			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-					fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View details
-						&raquo;</a>
-				</p>
-				<!-- Kalender -->
-				<div class="monthly" id="mycalendar"></div>
+				<div class="container-fluid">
+					<div class="row" style="max-width: 500px; margin: auto;">
+
+						<h1 style="text-align: center;">Markdown Guide</h1>
+
+						<h4>Emphasis</h4>
+						<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+
+						<h4>Headers</h4>
+						<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+
+						<h4>Lists</h4>
+						<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+
+						<h4>Links</h4>
+						<pre>[Text to display](http://www.example.com)</pre>
+
+						<h4>Quotes</h4>
+						<pre>> This is a quote.
+> It can span multiple lines!</pre>
+
+						<h4>
+							Images </small>
+						</h4>
+						<pre>![](http://www.example.com/image.jpg)</pre>
+
+						<h4>Tables</h4>
+						<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+
+						<h4>Displaying code</h4>
+						<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

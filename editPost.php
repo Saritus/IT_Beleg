@@ -65,20 +65,24 @@
 		<!--/.container-fluid -->
 	</nav>
 
-	<!-- Kalender -->
-	<div class="monthly" id="mycalendar"></div>
-
-	<form action="functions.php" method="post">
-		<p>
-			<input type="text" name="Post-Title" placeholder="Post-Title" />
-		</p>
-		<p id="textarea">
-			<textarea id="MyID" type="text" name="Post" /></textarea>
-		</p>
-		<p>
-			<input type="submit" value="Posten" />
-		</p>
-	</form>
+	<div class="container">
+	<?php
+	if (file_exists ( 'xml/posts.xml' )) {
+		$doc = simplexml_load_file ( 'xml/posts.xml' );
+		$index = 0;
+		foreach ( $doc->children () as $post ) {
+			echo '<div class="blog-post">
+					<h2 class="blog-post-title">' . $post->Title . '
+					<a class="btn btn-primary" href="postEditor.php?index=' . $index . '" role="button">Edit</a>
+					<a class="btn btn-primary" href="#" role="button">Delete</a></h2>
+					<p class="blog-post-meta">' . $post->Date . '</p>
+					<p>' . $post->Text . '</p>
+					</div>';
+			$index ++;
+		}
+	}
+	?>
+	</div>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>

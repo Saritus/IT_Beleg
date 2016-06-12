@@ -124,10 +124,7 @@
 > It can span multiple lines!</pre>
 
 						<h4>
-							Images &nbsp; <small>Need to upload an image? <a
-								href="http://imgur.com/" target="_blank">Imgur</a> has a great
-								interface.
-							</small>
+							Images </small>
 						</h4>
 						<pre>![](http://www.example.com/image.jpg)</pre>
 

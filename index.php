@@ -75,7 +75,7 @@
 						echo '<div class="blog-post">
 					<h2 class="blog-post-title">' . $post->Title . '</h2>
 					<p class="blog-post-meta">' . $post->Date . '</p>
-					<p>' . $post->Text . '</p>
+					<p>' . substr ( $post->Text, 0, 100 ) . '</p>
 					</div>';
 					}
 				}
@@ -97,8 +97,10 @@
 				<?php
 				if (file_exists ( 'xml/posts.xml' )) {
 					$doc = simplexml_load_file ( 'xml/posts.xml' );
+					$index = 0;
 					foreach ( $doc->children () as $post ) {
-						echo '<p><a href="#">'.$post->Title.'</a></p>';
+						echo '<p><a href="#' . $index . '">' . $post->Title . '</a></p>';
+						$index ++;
 					}
 				}
 				?>
