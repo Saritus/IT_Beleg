@@ -24,11 +24,6 @@
                 });
             });
         </script>
-<script>
-            $(function(){
-                $("#footer").load("footer.html");
-            });
-        </script>
 </head>
 <body>
 
@@ -69,27 +64,23 @@
 		<div class="row">
 			<div class="col-lg-8 blog-main">
 				<?php
+				require_once 'Parsedown.php';
+				$Parsedown = new Parsedown ();
 				if (file_exists ( 'xml/posts.xml' )) {
 					$doc = simplexml_load_file ( 'xml/posts.xml' );
-					foreach ( $doc->children () as $post ) {
+					for($index = 0; ($index < $doc->count ()) && ($index < 10); $index ++) {
+						// foreach ( $doc->children () as $post ) {
+						$post = $doc->Post [$doc->count () - 1 - $index];
 						echo '<div class="blog-post">
 					<h2 class="blog-post-title">' . $post->Title . '</h2>
 					<p class="blog-post-meta">' . $post->Date . '</p>
-					<p>' . substr ( $post->Text, 0, 100 ) . '</p>
+					<p>' . $Parsedown->text ( substr ( $post->Text, 0, 100 ) ) . '</p>
 					</div>';
 					}
 				}
 				?>
 			</div>
 			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-					fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View details
-						&raquo;</a>
 				</p>
 				<!-- Kalender -->
 				<div class="monthly" id="mycalendar"></div>
@@ -97,14 +88,13 @@
 				<?php
 				if (file_exists ( 'xml/posts.xml' )) {
 					$doc = simplexml_load_file ( 'xml/posts.xml' );
-					$index = 0;
-					foreach ( $doc->children () as $post ) {
+					for($index = 0; ($index < $doc->count ()) && ($index < 10); $index ++) {
+						$post = $doc->Post [$doc->count () - 1 - $index];
 						echo '<p><a href="#' . $index . '">' . $post->Title . '</a></p>';
-						$index ++;
+
 					}
 				}
 				?>
-				
 			</div>
 		</div>
 	</div>

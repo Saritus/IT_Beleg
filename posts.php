@@ -24,11 +24,6 @@
                 });
             });
         </script>
-<script>
-            $(function(){
-                $("#footer").load("footer.html");
-            });
-        </script>
 </head>
 <body>
 
@@ -68,12 +63,16 @@
 	<div class="container">
 	<?php
 	if (file_exists ( 'xml/posts.xml' )) {
+		require_once 'Parsedown.php';
+		$Parsedown = new Parsedown ();
 		$doc = simplexml_load_file ( 'xml/posts.xml' );
-		foreach ( $doc->children () as $post ) {
+		for($index = 0; ($index < $doc->count ()) && ($index < 10); $index ++) {
+			// foreach ( $doc->children () as $post ) {
+			$post = $doc->Post [$doc->count () - 1 - $index];
 			echo '<div class="blog-post">
-					<h2 class="blog-post-title">' . $post->Title . '</h2>
+					<a id="' . $index . '"></a><h2 class="blog-post-title">' . $post->Title . '</h2>
 					<p class="blog-post-meta">' . $post->Date . '</p>
-					<p>' . $post->Text . '</p>
+					<p>' . $Parsedown->text ( $post->Text ) . '</p>
 					</div>';
 		}
 	}
