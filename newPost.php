@@ -27,11 +27,6 @@
                 });
             });
         </script>
-<script>
-            $(function(){
-                $("#footer").load("footer.html");
-            });
-        </script>
 </head>
 <body>
 
