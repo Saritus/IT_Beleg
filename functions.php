@@ -6,7 +6,7 @@ if (isset ( $_POST ['Post-Title'] ) && isset ( $_POST ['Post'] )) {
 		$post = $doc->addChild ( 'Post' );
 		$post->addChild ( 'Title', $_POST ['Post-Title'] );
 		$post->addChild ( 'Text', $_POST ['Post'] );
-		$post->addChild ( 'Date', time () );
+		$post->addChild ( 'Date', date ( "d.m.y - H:i", time () ) );
 		
 		$doc->asXML ( "xml/posts.xml" );
 		
@@ -33,7 +33,7 @@ if (isset ( $_POST ['Post-Title'] ) && isset ( $_POST ['Post'] )) {
 		$newText = $text->appendChild ( $newText );
 		
 		$post->appendChild ( $date );
-		$newDate = $doc->createTextNode ( time () );
+		$newDate = $doc->createTextNode ( date ( "d.m.y - H:i", time () ) );
 		$newDate = $date->appendChild ( $newDate );
 		
 		$doc->preserveWhiteSpace = false;

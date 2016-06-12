@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Posts>
   <Post>
-    <Title>1t</Title>
-    <Text>1e</Text>
-    <Date>1465757432</Date>
+    <Title>Erster Titel</Title>
+    <Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</Text>
+    <Date>12.06.16 - 21:28</Date>
   </Post>
-<Post><Title>2t</Title><Text>2e</Text><Date>1465757438</Date></Post></Posts>
+<Post><Title>Zweiter Titel</Title><Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</Text><Date>12.06.16 - 21:28</Date></Post></Posts>

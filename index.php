@@ -20,7 +20,7 @@
             $(document).ready(function(){
                 $('#mycalendar').monthly({
                     mode: 'event',
-                    xmlUrl: 'files/event.xml'
+                    xmlUrl: 'xml/event.xml'
                 });
             });
         </script>
@@ -67,19 +67,19 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8">
-				<h2>Safari bug warning!</h2>
-				<p class="text-danger">As of v8.0, Safari exhibits a bug in which
-					resizing your browser horizontally causes rendering errors in the
-					justified nav that are cleared upon refreshing.</p>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-					fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View details
-						&raquo;</a>
-				</p>
+			<div class="col-lg-8 blog-main">
+				<?php
+				if (file_exists ( 'xml/posts.xml' )) {
+					$doc = simplexml_load_file ( 'xml/posts.xml' );
+					foreach ( $doc->children () as $post ) {
+						echo '<div class="blog-post">
+					<h2 class="blog-post-title">' . $post->Title . '</h2>
+					<p class="blog-post-meta">' . $post->Date . '</p>
+					<p>' . $post->Text . '</p>
+					</div>';
+					}
+				}
+				?>
 			</div>
 			<div class="col-lg-4">
 				<h2>Heading</h2>
