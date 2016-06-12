@@ -17,14 +17,6 @@
 <link href="css/monthly.css" rel="stylesheet">
 <script src="js/monthly.js"></script>
 <script>
-            $(document).ready(function(){
-                $('#mycalendar').monthly({
-                    mode: 'event',
-                    xmlUrl: 'files/event.xml'
-                });
-            });
-        </script>
-<script>
             $(function(){
                 $("#footer").load("footer.html");
             });
@@ -65,20 +57,39 @@
 		<!--/.container-fluid -->
 	</nav>
 
-	<!-- Kalender -->
-	<div class="monthly" id="mycalendar"></div>
+	<div class="container">
+		<h2>Image Gallery</h2>
 
-	<form action="functions.php" method="post">
-		<p>
-			<input type="text" name="Post-Title" placeholder="Post-Title" />
-		</p>
-		<p id="textarea">
-			<textarea id="MyID" type="text" name="Post" /></textarea>
-		</p>
-		<p>
-			<input type="submit" value="Posten" />
-		</p>
-	</form>
+	<?php
+	$files = scandir ( "upload" );
+	$total = count ( $files );
+	$images = array ();
+	for($x = 0; $x < $total; $x ++) :
+		if ($files [$x] != '.' && $files [$x] != '..') {
+			$images [] = $files [$x];
+		}
+	endfor
+	;
+	
+	$rowcount = 4;
+	for($x = 0; $rowcount * $x < count ( $images ); $x ++) :
+		echo '<div class="row">';
+		for($y = 0; ($rowcount * $x + $y < count ( $images )) && ($y < $rowcount); $y ++) :
+			echo '<div class="col-md-' . (12 / $rowcount) . '">
+				<a href="' . 'upload/' . $images [$rowcount * $x + $y] . '" class="thumbnail">
+					<p>' . $images [$rowcount * $x + $y] . '</p> <img class="img-thumbnail" alt="250x250"
+					src="upload/' . $images [$rowcount * $x + $y] . '" data-holder-rendered="true"
+					style="width: 250px; height: 250px;">
+				</a>
+			</div>';
+		endfor
+		;
+		echo '</div>';
+	endfor
+	;
+	
+	?>
+	</div>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>

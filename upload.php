@@ -17,14 +17,6 @@
 <link href="css/monthly.css" rel="stylesheet">
 <script src="js/monthly.js"></script>
 <script>
-            $(document).ready(function(){
-                $('#mycalendar').monthly({
-                    mode: 'event',
-                    xmlUrl: 'files/event.xml'
-                });
-            });
-        </script>
-<script>
             $(function(){
                 $("#footer").load("footer.html");
             });
@@ -39,18 +31,24 @@ $extension = strtolower ( pathinfo ( $_FILES ['datei'] ['name'], PATHINFO_EXTENS
 // Überprüfung der Dateiendung
 $allowed_extensions = array (
 		'png',
+		'PNG',
 		'jpg',
+		'JPG',
 		'jpeg',
-		'gif' 
+		'JPEG',
+		'gif',
+		'GIF' 
 );
 if (! in_array ( $extension, $allowed_extensions )) {
-	die ( "Ungültige Dateiendung. Nur png, jpg, jpeg und gif-Dateien sind erlaubt" );
+	header ( 'Location: uploadPicture.php?Alert=' . $extension . 'Nur png, jpg, jpeg und gif-Dateien sind erlaubt' );
+	die ( "Nur png, jpg, jpeg und gif-Dateien sind erlaubt" );
 }
 
 // Überprüfung der Dateigröße
 $max_size = 2 * 1024 * 1024; // 2 MB
 if ($_FILES ['datei'] ['size'] > $max_size) {
-	die ( "Bitte keine Dateien größer 2MB hochladen" );
+	header ( 'Location: uploadPicture.php?Alert=Maximal 2MB hochladen' );
+	die ( "Maximal 2MB hochladen" );
 }
 
 // Überprüfung dass das Bild keine Fehler enthält
@@ -94,6 +92,8 @@ $(document).ready(function(){
     });
 });
  -->
+
+header('Location: pictures.php');
 
 
 </html>

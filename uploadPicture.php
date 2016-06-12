@@ -17,14 +17,6 @@
 <link href="css/monthly.css" rel="stylesheet">
 <script src="js/monthly.js"></script>
 <script>
-            $(document).ready(function(){
-                $('#mycalendar').monthly({
-                    mode: 'event',
-                    xmlUrl: 'files/event.xml'
-                });
-            });
-        </script>
-<script>
             $(function(){
                 $("#footer").load("footer.html");
             });
@@ -66,13 +58,15 @@
 	</nav>
 
 	<?php
-	if (isset ( $_POST ['Alert-Type'] ) && isset ( $_POST ['Alert'] )) {
-		$alert = $_POST ['Alert'];
-		echo '<div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> Image was successfully uploaded.
-        </div>';
+	if (isset ( $_GET ['Alert'] )) {
+		$alert = $_GET ['Alert'];
+		echo '	<div class="container">
+			<div class="alert alert-danger" role="alert">' . $alert . '</div>
+		</div>';
 	}
 	?>
+
+
 
 	<div class="container">
 		<div class="row">
